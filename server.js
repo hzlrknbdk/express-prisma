@@ -1,5 +1,5 @@
 import express from "express";
-import userRoutes from "./routes/userRoutes.js";
+import userRoutes from "./src/routes/userRoutes.js";
 
 const app = express();
 
@@ -15,4 +15,8 @@ app.get("/", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+});
+
+app.listen(config.port, () => {
+  console.log(`Server is running on port ${config.port}`);
 });
