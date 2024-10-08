@@ -1,26 +1,38 @@
+import {
+  getUsers,
+  patchUser,
+  deleteUser,
+  createUser,
+  updateUser,
+  getUserById,
+  createManyUser,
+  updateManyUser,
+  getUserFindMany,
+  getUserFindFirst,
+} from "../controllers/userController.js";
+
 import express from "express";
-import { userController } from "../controllers/controllers.js";
 
 const router = express.Router();
 
-router.get("/users", userController.getUsers);
+router.get("/", getUsers);
 
-router.post("/users", userController.createUser);
+router.post("/", createUser);
 
-router.post("/users/many", userController.createManyUser);
+router.post("/many", createManyUser);
 
-router.get("/users/first", userController.getUserFindFirst);
+router.get("/first", getUserFindFirst);
 
-router.get("/users/many", userController.getUserFindMany);
+router.get("/many", getUserFindMany);
 
-router.get("/users/:id", userController.getUserById);
+router.get("/:id", getUserById);
 
-router.put("/users/:id", userController.updateUser);
+router.put("/:id", updateUser);
 
-router.put("/users/many/:lastName", userController.updateManyUser);
+router.put("/many/:lastName", updateManyUser);
 
-router.delete("/users/:id", userController.deleteUser);
+router.delete("/:id", deleteUser);
 
-router.patch("/users/:id", userController.patchUser);
+router.patch("/:id", patchUser);
 
 export default router;

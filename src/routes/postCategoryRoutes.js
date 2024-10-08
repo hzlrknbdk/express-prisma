@@ -1,11 +1,14 @@
 import express from "express";
-import { postCategoryController } from "../controllers/controllers.js";
+
+import {
+  createPostCategory,
+  deletePostCategory,
+} from "../controllers/postCategoryController.js";
 
 const router = express.Router();
 
-router.get("/post-categories", postCategoryController.createPostCategory);
+router.get("/post-categories", createPostCategory);
 
-router.post(
-  "/post-categories/:postId/:categoryId",
-  postCategoryController.deletePostCategory
-);
+router.post("/post-categories/:postId/:categoryId", deletePostCategory);
+
+export default router;
