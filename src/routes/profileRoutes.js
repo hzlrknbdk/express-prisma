@@ -9,14 +9,14 @@ import {
 
 const router = express.Router();
 
-router.post("/profiles", createProfile);
+router.post("/", createProfile);
 
-router.put("/profiles/:id", updateProfile);
+router.put("/:id", updateProfile);
 
-router.delete("/profiles/:id", deleteProfile);
+router.delete("/:id", deleteProfile);
 
-router.get("/profiles", getProfiles);
+router.get("/", getProfiles);
 
-router.get("/profiles/:id", getProfileById);
+router.get("/:id", getProfileById);
 
 export default router;
